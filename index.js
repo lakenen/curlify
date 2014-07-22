@@ -25,12 +25,17 @@ module.exports = function (str) {
     }
   })
 
-  return function (u, opt, dat) {
-    u = u || url
+  var result = function (ur, opt, dat) {
+    ur = ur || url
     opt = extend(true, {}, options, opt || {})
     dat = dat || data
-    return makeRequest(u, opt, dat)
+    return makeRequest(ur, opt, dat)
   }
+  result.url = url
+  result.options = options
+  result.data = data
+
+  return result
 
   function addHeaders(harr) {
     if (!Array.isArray(harr)) {
