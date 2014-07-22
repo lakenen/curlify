@@ -16,7 +16,21 @@ request().pipe(process.stdout)
 
 ## Browserify
 
-The curlify module can be used as a browserify transform for cURL commands saved as files with the `.curl` extension.
+The curlify module can be used as a [browserify](https://github.com/substack/node-browserify) transform for cURL commands saved as files with the `.curl` extension.
+
+The module will default to being a browserify transform if the given argument does not look like a cURL command (i.e., it doesn't start with `'curl '`).
+
+`command.curl`
+```
+curl http://example.com/ -X POST -d "some=data"
+```
+
+```js
+var b = browserify()
+b.add('command.curl')
+b.transform('curlify')
+b.bundle()
+```
 
 ## License
 
