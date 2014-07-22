@@ -14,6 +14,10 @@ request().pipe(process.stdout)
 ```
 
 
+## Browserify
+
+The curlify module can be used as a browserify transform for cURL commands saved as files with the `.curl` extension.
+
 ## License
 
 ([The MIT License](LICENSE))

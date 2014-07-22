@@ -1,20 +1,25 @@
 {
   "name": "curlify",
   "description": "Generate a node HTTP(S) request from cURL command line arguments.",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Cameron Lakenen <cameron@lakenen.com>",
   "dependencies": {
     "append-query": "^1.0.0",
     "extend": "^1.3.0",
     "hyperquest": "^0.3.0",
     "minimist": "^0.2.0",
-    "spawn-args": "0.0.3",
+    "shell-quote": "^1.4.2",
+    "through": "^2.3.4",
     "unquote": "^1.0.0"
   },
   "main": "index.js",
-  "devDependencies": {},
+  "browser": "lib/curlify.js",
+  "devDependencies": {
+    "browserify": "^4.2.3",
+    "tape": "^2.13.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/tape test/*.js"
   },
   "license": "MIT",
   "repository": {
@@ -28,6 +33,7 @@
   "keywords": [
     "curl",
     "http",
-    "curlify"
+    "curlify",
+    "browserify-transform"
   ]
 }

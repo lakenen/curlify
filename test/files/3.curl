@@ -1,0 +1,3 @@
+curl -X POST \
+  http://example.com/ \
+  -d 'foo=bar'
