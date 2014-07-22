@@ -1,6 +1,6 @@
 # curlify
 
-Transform [cURL](http://curl.haxx.se/) commands into a node function that will make the request specified by cURL command line arguments.
+Generate a node HTTP(S) request from [cURL](http://curl.haxx.se/) command line arguments.
 
 ## Usage
 
