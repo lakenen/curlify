@@ -2,6 +2,7 @@ var argify = require('spawn-args')
   , minimist = require('minimist')
   , request = require('hyperquest')
   , extend = require('extend')
+  , unquote = require('unquote')
 
 module.exports = function (str) {
   var argv = minimist(argify(str))
@@ -56,8 +57,8 @@ module.exports = function (str) {
 
   function addData(d) {
     if (Array.isArray(d)) {
-      data = d.reduce(function (x, d) {
-        return x + '&' + unquote(d)
+      data = d.map(unquote).reduce(function (a, b) {
+        return a + '&' + b
       })
     } else {
       data = unquote(d)
@@ -73,15 +74,4 @@ module.exports = function (str) {
     }
     return req
   }
-}
-
-function unquote(str) {
-  var q = /[\'\"]/
-  if (q.test(str.charAt(0))) {
-    str = str.substr(1)
-  }
-  if (q.test(str.charAt(str.length - 1))) {
-    str = str.substr(0, str.length - 1)
-  }
-  return str
 }
