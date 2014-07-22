@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Cameron Lakenen <cameron@lakenen.com>",
   "dependencies": {
+    "append-query": "^1.0.0",
     "extend": "^1.3.0",
     "hyperquest": "^0.3.0",
     "minimist": "^0.2.0",

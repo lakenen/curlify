@@ -3,21 +3,25 @@ var argify = require('spawn-args')
   , request = require('hyperquest')
   , extend = require('extend')
   , unquote = require('unquote')
+  , appendQuery = require('append-query')
 
 module.exports = function (str) {
   var argv = minimist(argify(str))
     , url = argv._[1]
     , options = {
-      headers: {}
+        method: 'GET'
+      , headers: {}
     }
     , data = ''
 
   Object.keys(argv).forEach(function (k) {
     switch (k) {
       case 'H':
+      case 'header':
         addHeaders(argv[k])
         break
       case 'd':
+      case 'data':
         addData(argv[k])
         break
       case 'X':
@@ -25,6 +29,11 @@ module.exports = function (str) {
         break
     }
   })
+
+  if (data && options.method === 'GET') {
+    url = appendQuery(url, data)
+    data = ''
+  }
 
   var result = function (ur, opt, dat) {
     ur = ur || url
