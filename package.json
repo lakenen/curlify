@@ -1,5 +1,6 @@
 {
   "name": "curlify",
+  "description": "Transform cURL commands into a node function that will make the request specified by cURL command line arguments.",
   "version": "0.0.0",
   "author": "Cameron Lakenen <cameron@lakenen.com>",
   "dependencies": {
