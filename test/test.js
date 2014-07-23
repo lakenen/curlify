@@ -36,3 +36,5 @@ test('should generate proper request headers when multiple headers are added', f
   }
   t.deepEqual(req.options.headers, expected, 'should be equal')
 })
+
+// todo: test making requests
