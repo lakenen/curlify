@@ -1,7 +1,7 @@
 {
   "name": "curlify",
   "description": "Generate a node HTTP(S) request from cURL command line arguments.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Cameron Lakenen <cameron@lakenen.com>",
   "dependencies": {
     "append-query": "^1.0.0",
