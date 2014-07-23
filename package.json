@@ -8,7 +8,7 @@
     "extend": "^1.3.0",
     "hyperquest": "^0.3.0",
     "minimist": "^0.2.0",
-    "shell-quote": "^1.4.2",
+    "spawn-args": "0.0.4",
     "through": "^2.3.4",
     "unquote": "^1.0.0"
   },

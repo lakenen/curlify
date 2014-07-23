@@ -1,3 +1,5 @@
+# I am a comment!
 curl -X POST \
   http://example.com/ \
-  -d 'foo=bar'
+  -d 'foo=bar' # wtf is this comment doing here?
+# also a comment

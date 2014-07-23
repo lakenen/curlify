@@ -1,4 +1,5 @@
 var curlifyPath = require.resolve('./lib/curlify')
+  , clean = require('./lib/clean-command')
 
 module.exports = function (file) {
   file = file.trim()
@@ -28,5 +29,6 @@ module.exports = function (file) {
 }
 
 function isCurlCommand(str) {
+  str = clean(str)
   return /^curl\s+/.test(str)
 }
