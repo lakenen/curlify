@@ -37,4 +37,11 @@ test('should generate proper request headers when multiple headers are added', f
   t.deepEqual(req.options.headers, expected, 'should be equal')
 })
 
+test('should unquote things properly', function (t) {
+  t.plan(2)
+  var req = curlify('curl -X "POST" "http://example.com/"')
+  t.equal(req.url, 'http://example.com/', 'should be equal')
+  t.equal(req.options.method, 'POST', 'should be POST')
+})
+
 // todo: test making requests
